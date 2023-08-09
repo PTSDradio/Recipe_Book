@@ -1,8 +1,7 @@
 # from sqlalchemy import func
-from sqlalchemy import create_engine, Column, Integer, String, DateTime 
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, ba
 from sqlalchemy.ext.declarative import declarative_base
-
-engine = create_engine('sqlite:///recipe.db')
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -14,8 +13,17 @@ class Recipe(Base):
     genre = Column(String())
     time = Column(String())
     
-    # users = relationship('User')
-    # ingredients = relationship('Ingredient')
+    user_id = Column(Integer(), ForeignKey("users.id"))
+    ingredient_id = Column(Integer(), ForeignKey("ingredients.id"))
+
+    def __repr__(self):
+        return f'Id: {self.id}),' \
+            f'Rec Name: {self.name},' \
+            f'Rec Genre: {self.genre},' \
+            f'Rec Time to Cook: {self.time},' \
+            f'Author: {self.user_id},' \
+            f'Rec Ingredient ID: {self.ingredient_id}' \
+        
 
 class User(Base):
     __tablename__ = "users"
@@ -23,8 +31,17 @@ class User(Base):
     id = Column(Integer(), primary_key=True)
     name = Column(String())
     password = Column(String())
-    food_restrictions = Column(String())
-    saved_recipes = Column(String())
+    food_restrictions = Column(String())#ARRAY
+    saved_recipes = Column(String())#array
+
+    recipes = relationship("Recipe", backref="user")
+    def __repr__(self):
+        return f'Id: {self.id}),' \
+            f'User Name: {self.name},' \
+            f'User Password: {self.password},' \
+            f'User Food Restrictions: {self.food_restrictions},' \
+            f'User Saved Recipes: {self.saved_recipes}' \
+
 
 
 class Ingredient(Base):
@@ -32,7 +49,13 @@ class Ingredient(Base):
 
     id = Column(Integer(), primary_key=True)
     name = Column(String())
-    category = Column(String())
+    category = Column(String())#ARRAY
 
-    # recipe used in
+    # recipe
     # recipe = relationship()
+
+    def __repr__(self):
+        return f'Ing Id: {self.id},' \
+            f'Ing Name: {self.name},' \
+            f'Ing Category: {self.category}' \
+        
