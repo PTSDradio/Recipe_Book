@@ -1,0 +1,13 @@
+SCHEMA:
+ingredient object is a tuple with:
+    name
+    category
+
+Recipe is a dictionary with:
+    ingredients list 
+    instructions string
+
+User is a dictionary with:
+    username string
+    password string
+    saved_recipes list

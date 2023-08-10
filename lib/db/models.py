@@ -1,5 +1,5 @@
 # from sqlalchemy import func
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, ba
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -12,6 +12,7 @@ class Recipe(Base):
     name = Column(String())
     genre = Column(String())
     time = Column(String())
+    instructions = Column(String())
     
     user_id = Column(Integer(), ForeignKey("users.id"))
     ingredient_id = Column(Integer(), ForeignKey("ingredients.id"))
