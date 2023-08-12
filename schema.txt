@@ -11,3 +11,11 @@ User is a dictionary with:
     username string
     password string
     saved_recipes list
+
+
+after list of recipe names are shown:
+    be able to display the name, ingreds, time to cook, and instructions
+    be able to add recipe to users fav list
+    
+    makes underscor line for name
+    print ('{:_^20}'.format('hello'))
