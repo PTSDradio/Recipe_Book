@@ -1,5 +1,5 @@
 from db.models import User, Ingredient, Recipe, engine
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
 Session = sessionmaker(bind=engine)
@@ -48,16 +48,19 @@ def main():
                     print("Search via name")
                     keyword = input("Search here: ")
                     filterRecipeByName(keyword)
+                    preference = 5
 
                 elif preference == 2:
                     print("Search via Genre")
                     keyword = input("Search here: ")
                     filterRecipeByGenre(keyword)
+                    preference = 5
                 
                 elif preference == 3:
                     print("Search via Ingredient")
                     keyword = input("Search here: ")
                     filterRecipeByIng(keyword)
+                    preference = 5
                 
                 elif preference == 4:
                     print("...Detriot")

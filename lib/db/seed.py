@@ -82,6 +82,36 @@ if __name__ == "__main__":
     pancake_ing = [flour, baking_powder, sugar, salt, milk, butter, egg]
     
     Pancake.ing.extend(pancake_ing)
+    
+    Fritata = Recipe(
+        name="Fritata Medley",
+        genre="breakfast",
+        instructions = """
+            - Preheat the oven to 400F. Whisk eggs(6), heavy cream(1/3 cup) and salt(1/2)
+              until you get a smooth and even texture. Set aside.
+
+            - Cut tomatoes(1/2 cup) in half. Chop bell peppers(1/2 cup) into small pieces.
+
+            - Melt butter(1 tbsp) and coat the sides of the baking dish with it.
+              Spread vegetables evenly on the bottom of the pan.
+
+            - Pour over the egg mixture. Sprinkle the cheese(1 cup mozz, 1/2 cup goat cheese) on top. Using a fork, 
+            distribute the cheese around a little to incorporate it into the eggs. 
+            Bake for 15 to 17 minutes, or until the edges are set and the top is lightly browned.
+        """
+    )  
+    
+    heavy_whipping_cream = Ingredient(name="heavy whippping cream", category="dairy")
+    mozzarella = Ingredient(name="mozzarella", category="cheese")
+    goat_cheese = Ingredient(name="goat cheese", category="cheese")
+    cherry_tomato = Ingredient(name="cherry tomato", category="vegetable")
+    bell_pepper = Ingredient(name="bell pepper", category="vegetable")
+    arugula = Ingredient(name="arugula", category="herb")
+    herbs = Ingredient(name="herbs", category="herb")
+
+
+    fritata_ing = [egg, heavy_whipping_cream, salt, mozzarella, goat_cheese, cherry_tomato, bell_pepper, arugula, butter, herbs]
+    Fritata.ing.extend(fritata_ing)
 
     user_1 = User( 
         name ="john",
@@ -90,7 +120,7 @@ if __name__ == "__main__":
 
     user_1.rec_u.append(Chili)
 
-    all_list = chili_ing+[Chili, user_1]
+    all_list = chili_ing+[Chili, user_1, Pancake, Fritata] + pancake_ing + fritata_ing
 
     session.add_all(all_list)
     session.commit()
