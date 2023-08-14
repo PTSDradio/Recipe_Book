@@ -21,15 +21,20 @@ if __name__ == "__main__":
         genre="Soup",
         time="30 Minutes",
         instructions="""
-            - Add the olive oil(1 tbsp) to a large soup pot and place it over medium-high heat for two minutes. Add the onion(1). Cook for 5 minutes, stirring occasionally.
+            - Add the olive oil(1 tbsp) to a large soup pot and place it over medium-high heat for two minutes.
+              Add the onion(1). Cook for 5 minutes, stirring occasionally.
 
-            - Add the ground beef(1 lbs) to the pot. Break it apart with a wooden spoon. Cook for 6-7 minutes, until the beef is browned, stirring occasionally.
+            - Add the ground beef(1 lbs) to the pot. Break it apart with a wooden spoon.
+              Cook for 6-7 minutes, until the beef is browned, stirring occasionally.
 
-            - Add the chili powder(2 1/2 tbsp), cumin(2 tbsp), sugar(2 tbsp), tomato paste(2 tbsp), garlic powder(1 tbsp), salt(1 1/2 tsp), pepper(1/2 tsp), and optional cayenne(1/4 tsp). Stir until well combined.
+            - Add the chili powder(2 1/2 tbsp), cumin(2 tbsp), sugar(2 tbsp), tomato paste(2 tbsp), garlic powder(1 tbsp),
+              salt(1 1/2 tsp), pepper(1/2 tsp), and optional cayenne(1/4 tsp). Stir until well combined.
 
-            - Add the broth(1 1/2 cups), diced tomatoes (1 15 oz. can with their juice), drained beans(1 16 oz. can), and tomato sauce(1). Stir well.
+            - Add the broth(1 1/2 cups), diced tomatoes (1 15 oz. can with their juice),
+              drained beans(1 16 oz. can), and tomato sauce(1). Stir well.
 
-            - Bring the liquid to a low boil. Then, reduce the heat (low to medium-low) to gently simmer the chili, uncovered, for 20-25 minutes, stirring occasionally.
+            - Bring the liquid to a low boil. Then, reduce the heat (low to medium-low) to gently simmer the chili,
+              uncovered, for 20-25 minutes, stirring occasionally.
 
             - Remove the pot from the heat. Let the chili rest for 5-10 minutes before serving.
             """    
@@ -54,6 +59,29 @@ if __name__ == "__main__":
     chili_ing = [olive_oil, yellow_onion, ground_beef, chili_powder, ground_cumin, sugar, tomato_paste, garlic_powder, salt, black_pepper, cayenne_pepper, beef_broth, tomatoes, red_kidney_beans, tomato_sauce]
 
     Chili.ing.extend(chili_ing)
+
+    Pancake = Recipe(
+        name="Old fashioned Pancakes",
+        genre="breakfast, sweets",
+        time="20 minutes",
+        instructions="""
+            - Sift flour(1 1/2 cups), baking powder(3 1/2 tsp), sugar(1 tbsp), and salt(1/4 tsp) together in a large bowl.
+              Make a well in the center and add milk(1 1/4 cups), melted butter(3 tbsp), and egg(1); mix until smooth.
+            
+            - Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle,
+              using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes.
+              Flip and cook until browned on the other side. Repeat with remaining batter.
+            """
+    )
+
+    flour = Ingredient(name="flour", category="flour")
+    baking_powder = Ingredient(name="baking_powder", category="baking")
+    milk = Ingredient(name="milk", category="dairy")
+    butter = Ingredient(name="butter", category="dairy")
+    egg = Ingredient(name="egg", category="egg")
+    pancake_ing = [flour, baking_powder, sugar, salt, milk, butter, egg]
+    
+    Pancake.ing.extend(pancake_ing)
 
     user_1 = User( 
         name ="john",
